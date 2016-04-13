@@ -15,12 +15,12 @@ function createMap() {
 
     window.cartodb_basemap = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
-    });
+    }).addTo(map);
 
     window.norkart_basemap = L.tileLayer.webatlas({
-        apikey: 'f82f6b73-4178-4f62-90fa-0b2c5f479313',
+        apikey: 'apikey',
         mapType: L.TileLayer.Webatlas.Type.GREY
-    }).addTo(map);
+    });
 
     cartodb.createLayer(map, 'https://alexanno-test.cartodb.com/api/v2/viz/07773f86-ff57-11e5-bc60-0ecfd53eb7d3/viz.json')
         .addTo(map)
